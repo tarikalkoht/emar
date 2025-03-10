@@ -140,7 +140,18 @@ class Emar {
      * Register widget scripts
      */
     public function widget_scripts() {
-        wp_register_script('emar-public', EMAR_PLUGIN_URL . 'assets/js/emar-public.js', ['jquery'], $this->version, true);
+        // Register Slick carousel first
+        wp_register_style('slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', [], '1.8.1');
+        wp_register_style('slick-theme', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css', ['slick'], '1.8.1');
+        wp_register_script('slick', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', ['jquery'], '1.8.1', true);
+        
+        // Enqueue Slick styles and script
+        wp_enqueue_style('slick');
+        wp_enqueue_style('slick-theme');
+        wp_enqueue_script('slick');
+        
+        // Then register the plugin's scripts
+        wp_register_script('emar-public', EMAR_PLUGIN_URL . 'assets/js/emar-public.js', ['jquery', 'slick'], $this->version, true);
         wp_localize_script('emar-public', 'emarParams', [
             'ajaxurl' => admin_url('admin-ajax.php'),
             'nonce' => wp_create_nonce('emar-nonce')
@@ -216,7 +227,13 @@ class Emar {
     public function enqueue_public_scripts() {
         // Only enqueue in frontend, not in admin
         if (!is_admin()) {
-            wp_enqueue_script('emar-public');
+            // Check if Elementor is active
+            if (did_action('elementor/loaded')) {
+                wp_enqueue_style('slick');
+                wp_enqueue_style('slick-theme');
+                wp_enqueue_script('slick');
+                wp_enqueue_script('emar-public');
+            }
         }
     }
 
