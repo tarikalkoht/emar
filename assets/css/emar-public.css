@@ -1,0 +1,381 @@
+/**
+ * Emar Timeline Slider - Public CSS
+ */
+
+/* Timeline Slider Container */
+.emar-timeline-slider {
+    position: relative;
+    padding: 30px 0;
+    margin-bottom: 20px;
+    direction: ltr;
+}
+
+.rtl .emar-timeline-slider {
+    direction: rtl;
+}
+
+/* Slide */
+.emar-timeline-slide {
+    position: relative;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.emar-timeline-slider .slick-center .emar-timeline-slide {
+    z-index: 10;
+}
+
+.emar-timeline-slide-inner {
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.emar-timeline-slide-inner:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Thumbnail */
+.emar-timeline-slide-thumbnail {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.emar-timeline-slide-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.5s ease;
+}
+
+.emar-timeline-slide:hover .emar-timeline-slide-thumbnail img {
+    transform: scale(1.05);
+}
+
+/* Play Button */
+.emar-timeline-slide-play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #e91e63;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.emar-timeline-slide-play-button:hover {
+    background-color: #fff;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.emar-timeline-slide-play-button i {
+    font-size: 24px;
+    margin-left: 4px;
+}
+
+/* Title */
+.emar-timeline-slide-title {
+    padding: 15px 20px 5px;
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.emar-timeline-slide-title a {
+    color: #333;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.emar-timeline-slide-title a:hover {
+    color: #e91e63;
+}
+
+/* Excerpt */
+.emar-timeline-slide-excerpt {
+    padding: 0 20px 15px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #666;
+}
+
+/* Read More Button */
+.emar-timeline-slide-button {
+    display: inline-block;
+    margin: 0 20px 20px;
+    padding: 8px 20px;
+    background-color: #e91e63;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.emar-timeline-slide-button:hover {
+    background-color: #c2185b;
+    color: #fff;
+}
+
+/* Timeline Container */
+.emar-timeline-container {
+    position: relative;
+    padding: 10px 0 30px;
+    margin: 20px 50px;
+    width: 100%;
+    display: block;
+    position: relative;
+    margin-top: 20px;
+}
+
+/* Timeline Line */
+.emar-timeline-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: #ddd;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.emar-timeline-line-active {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 3px;
+    width: 0;
+    background-color: #e91e63;
+    transform: translateY(-50%);
+    transition: width 0.3s ease;
+    z-index: 2;
+}
+
+/* Timeline Markers */
+.emar-timeline-markers {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    z-index: 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.emar-timeline-marker {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #999;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 0 0 3px #ddd;
+    transition: all 0.3s ease;
+}
+
+.emar-timeline-marker.active,
+.emar-timeline-marker:hover {
+    background-color: #e91e63;
+    color: #fff;
+    box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.3);
+}
+
+/* Slide Index (Hidden but used for data) */
+.emar-timeline-slide-index {
+    display: none;
+}
+
+/* Slider Navigation Arrows */
+.emar-timeline-slider-prev,
+.emar-timeline-slider-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 20;
+    transition: all 0.3s ease;
+    color: #333;
+}
+
+.emar-timeline-slider-prev {
+    left: -20px;
+}
+
+.emar-timeline-slider-next {
+    right: -20px;
+}
+
+.emar-timeline-slider-prev:hover,
+.emar-timeline-slider-next:hover {
+    background-color: #e91e63;
+    color: #fff;
+}
+
+.emar-timeline-slider-prev i,
+.emar-timeline-slider-next i {
+    font-size: 16px;
+}
+
+/* Slick Overrides */
+.emar-timeline-slider .slick-dots {
+    bottom: -40px;
+}
+
+.emar-timeline-slider .slick-dots li button:before {
+    font-size: 10px;
+    color: #ddd;
+    opacity: 1;
+}
+
+.emar-timeline-slider .slick-dots li.slick-active button:before {
+    color: #e91e63;
+}
+
+/* Empty State */
+.emar-timeline-slider-empty {
+    padding: 30px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    color: #666;
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 991px) {
+    .emar-timeline-slider {
+        padding: 20px 0;
+    }
+    
+    .emar-timeline-slide-title {
+        font-size: 16px;
+    }
+    
+    .emar-timeline-container {
+        margin: 15px 40px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .emar-timeline-slide-play-button {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .emar-timeline-slide-play-button i {
+        font-size: 20px;
+    }
+    
+    .emar-timeline-container {
+        margin: 10px 30px;
+    }
+    
+    .emar-timeline-marker {
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .emar-timeline-slide-title {
+        font-size: 14px;
+        padding: 10px 15px 5px;
+    }
+    
+    .emar-timeline-slide-excerpt {
+        padding: 0 15px 10px;
+        font-size: 12px;
+    }
+    
+    .emar-timeline-slide-button {
+        margin: 0 15px 15px;
+        padding: 6px 15px;
+        font-size: 12px;
+    }
+    
+    .emar-timeline-container {
+        margin: 5px 25px;
+    }
+    
+    .emar-timeline-marker {
+        width: 20px;
+        height: 20px;
+        line-height: 20px;
+        font-size: 9px;
+    }
+    
+    .emar-timeline-slider-prev,
+    .emar-timeline-slider-next {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* RTL Support */
+.rtl .emar-timeline-slider-prev {
+    right: -20px;
+    left: auto;
+}
+
+.rtl .emar-timeline-slider-next {
+    left: -20px;
+    right: auto;
+}
+
+.rtl .emar-timeline-slide-play-button i {
+    margin-left: 0;
+    margin-right: 4px;
+}
+
+/* Zoom animation effect */
+.emar-timeline-slider[data-settings*="zoom"] .slick-slide {
+    transform: scale(0.8);
+    transition: transform 0.5s cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+.emar-timeline-slider[data-settings*="zoom"] .slick-center {
+    transform: scale(1);
+}
+
+/* Force horizontal layout */
+.emar-timeline-slider .slick-track {
+    display: flex !important;
+    flex-direction: row !important;
+}
+
+.emar-timeline-slider .slick-slide {
+    float: none !important;
+    height: auto !important;
+}

@@ -1,0 +1,487 @@
+# Copyright (C) 2025 Your Name
+# This file is distributed under the GPL-2.0+.
+msgid ""
+msgstr ""
+"Project-Id-Version: Emar 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/emar\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-03-10T12:00:00+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.8.0\n"
+"X-Domain: emar\n"
+
+#. Plugin Name of the plugin
+msgid "Emar"
+msgstr ""
+
+#. Plugin URI of the plugin
+msgid "https://example.com/emar/"
+msgstr ""
+
+#. Description of the plugin
+msgid "A plugin that adds custom Elementor widgets including a timeline slider widget."
+msgstr ""
+
+#. Author of the plugin
+msgid "Your Name"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "https://example.com/"
+msgstr ""
+
+#: emar.php:39
+msgid "\"%1$s\" requires \"%2$s\" to be installed and activated. %3$s"
+msgstr ""
+
+#: emar.php:41
+msgid "Install Elementor"
+msgstr ""
+
+#: emar.php:52
+msgid "\"%1$s\" requires \"%2$s\" version %3$s or greater."
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:48
+msgid "Timeline Slider"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:82
+msgid "Content Settings"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:92
+msgid "Data Source"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:103
+msgid "Categories"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:116
+msgid "Tags"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:129
+msgid "Number of Items"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:143
+msgid "Order By"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:147
+msgid "Date"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:148
+msgid "Title"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:149
+msgid "Random"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:150
+msgid "Menu Order"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:159
+msgid "Order"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:163
+msgid "Descending"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:164
+msgid "Ascending"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:172
+msgid "Show Title"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:175
+#: widgets/class-emar-timeline-slider.php:187
+#: widgets/class-emar-timeline-slider.php:212
+msgid "Show"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:176
+#: widgets/class-emar-timeline-slider.php:188
+#: widgets/class-emar-timeline-slider.php:213
+msgid "Hide"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:184
+msgid "Show Excerpt"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:196
+msgid "Excerpt Length"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:211
+msgid "Show Read More"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:221
+msgid "Read More Text"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:223
+#: widgets/class-emar-timeline-slider.php:979
+msgid "Read More"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:235
+msgid "Slider Settings"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:244
+msgid "Autoplay"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:247
+#: widgets/class-emar-timeline-slider.php:309
+#: widgets/class-emar-timeline-slider.php:323
+#: widgets/class-emar-timeline-slider.php:345
+msgid "Yes"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:248
+#: widgets/class-emar-timeline-slider.php:310
+#: widgets/class-emar-timeline-slider.php:324
+#: widgets/class-emar-timeline-slider.php:346
+msgid "No"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:256
+msgid "Autoplay Speed"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:271
+msgid "Animation Type"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:275
+msgid "Slide"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:276
+msgid "Fade"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:277
+msgid "Zoom"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:285
+msgid "Animation Speed (ms)"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:298
+msgid "Show Arrows"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:301
+#: widgets/class-emar-timeline-slider.php:315
+msgid "Show"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:302
+#: widgets/class-emar-timeline-slider.php:316
+msgid "Hide"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:312
+msgid "Show Dots"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:326
+msgid "Pause on Hover"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:337
+msgid "Draggable"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:354
+msgid "Items to Show"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:362
+msgid "Number of items to show at once"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:368
+msgid "Center Mode"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:376
+msgid "Enable center mode for emphasized active slide"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:385
+#: widgets/class-emar-timeline-slider.php:453
+msgid "Slider"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:395
+#: widgets/class-emar-timeline-slider.php:463
+#: widgets/class-emar-timeline-slider.php:527
+msgid "Background"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:407
+#: widgets/class-emar-timeline-slider.php:475
+#: widgets/class-emar-timeline-slider.php:538
+#: widgets/class-emar-timeline-slider.php:615
+#: widgets/class-emar-timeline-slider.php:672
+#: widgets/class-emar-timeline-slider.php:800
+msgid "Padding"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:419
+#: widgets/class-emar-timeline-slider.php:487
+msgid "Border"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:427
+#: widgets/class-emar-timeline-slider.php:498
+#: widgets/class-emar-timeline-slider.php:573
+#: widgets/class-emar-timeline-slider.php:811
+#: widgets/class-emar-timeline-slider.php:905
+msgid "Border Radius"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:439
+#: widgets/class-emar-timeline-slider.php:510
+#: widgets/class-emar-timeline-slider.php:917
+msgid "Box Shadow"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:517
+msgid "Slides"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:550
+msgid "Margin"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:562
+msgid "Border"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:583
+msgid "Active Slide Scale"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:605
+msgid "Title"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:614
+#: widgets/class-emar-timeline-slider.php:671
+msgid "Typography"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:623
+#: widgets/class-emar-timeline-slider.php:680
+#: widgets/class-emar-timeline-slider.php:728
+#: widgets/class-emar-timeline-slider.php:762
+msgid "Text Color"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:631
+#: widgets/class-emar-timeline-slider.php:688
+msgid "Margin"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:648
+msgid "Excerpt"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:705
+msgid "Read More Button"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:722
+#: widgets/class-emar-timeline-slider.php:756
+msgid "Normal"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:736
+#: widgets/class-emar-timeline-slider.php:770
+msgid "Background Color"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:744
+msgid "Border"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:756
+#: widgets/class-emar-timeline-slider.php:790
+msgid "Hover"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:778
+msgid "Border Color"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:787
+msgid "Transition Duration"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:823
+msgid "Thumbnail"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:832
+msgid "Border"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:840
+msgid "Border Radius"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:850
+msgid "Overlay"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:863
+msgid "Box Shadow"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:871
+msgid "Aspect Ratio"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:891
+msgid "Timeline"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:900
+msgid "Height"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:917
+msgid "Color"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:926
+msgid "Active Color"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:935
+msgid "Margin"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:952
+msgid "Navigation Arrows"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:961
+msgid "Size"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:977
+msgid "Icon Size"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:991
+#: widgets/class-emar-timeline-slider.php:1025
+msgid "Normal"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:999
+#: widgets/class-emar-timeline-slider.php:1033
+msgid "Color"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:1007
+#: widgets/class-emar-timeline-slider.php:1041
+msgid "Background"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:1015
+msgid "Border"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:1025
+#: widgets/class-emar-timeline-slider.php:1059
+msgid "Hover"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:1049
+msgid "Border Color"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:1067
+msgid "Border Radius"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:1079
+msgid "Padding"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:1091
+msgid "Box Shadow"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:1099
+msgid "Play Button"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:1108
+msgid "Size"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:1124
+msgid "Icon Size"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:1138
+msgid "Normal"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:1146
+msgid "Color"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:1154
+msgid "Background"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:1164
+msgid "Hover"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:1172
+msgid "Color"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:1180
+msgid "Background"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:1192
+msgid "Border Radius"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:1204
+msgid "Opacity"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:1217
+msgid "Box Shadow"
+msgstr ""
+
+#: widgets/class-emar-timeline-slider.php:1400
+msgid "No posts found."
+msgstr ""
