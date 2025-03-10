@@ -1497,6 +1497,32 @@ class Emar_Timeline_Slider extends \Elementor\Widget_Base {
                 'rtl' => is_rtl(),
                 'cssEase' => 'cubic-bezier(0.7, 0, 0.3, 1)',
                 'respondTo' => 'slider',
+                'vertical' => false,
+                'infinite' => true,
+                'adaptiveHeight' => true,
+                'responsive' => [
+                    [
+                        'breakpoint' => 991,
+                        'settings' => [
+                            'slidesToShow' => min(absint($settings['slides_to_show']), 3),
+                            'slidesToScroll' => 1
+                        ]
+                    ],
+                    [
+                        'breakpoint' => 767,
+                        'settings' => [
+                            'slidesToShow' => min(absint($settings['slides_to_show']), 2),
+                            'slidesToScroll' => 1
+                        ]
+                    ],
+                    [
+                        'breakpoint' => 479,
+                        'settings' => [
+                            'slidesToShow' => 1,
+                            'slidesToScroll' => 1
+                        ]
+                    ]
+                ]
             ];
             
             // Animation type

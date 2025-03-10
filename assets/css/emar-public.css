@@ -373,9 +373,21 @@
 .emar-timeline-slider .slick-track {
     display: flex !important;
     flex-direction: row !important;
+    width: 100% !important;
 }
 
 .emar-timeline-slider .slick-slide {
     float: none !important;
     height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
 }
+
+.slick-initialized .slick-slide {
+    display: flex !important;
+}
+
+.emar-timeline-slider .slick-list {
+    overflow: visible !important;
+}
+

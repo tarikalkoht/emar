@@ -9,6 +9,13 @@
     'use strict';
 
     /**
+     * Helper function to check if RTL is active
+     */
+    function is_rtl() {
+        return jQuery('html').attr('dir') === 'rtl';
+    }
+
+    /**
      * Initialize Timeline Sliders
      */
     function initTimelineSliders() {
@@ -34,11 +41,44 @@
             
             // Initialize slider with settings
             $slider.slick({
-                slidesToShow: settings.slides_to_show,
-                slidesToScroll: 1,
-                vertical: false,  // Ensure this is set to false
-                rtl: is_rtl(),
-                // other settings
+                slidesToShow: settings.slides_to_show || 3,
+                slidesToScroll: settings.slidesToScroll || 1,
+                autoplay: settings.autoplay || false,
+                autoplaySpeed: settings.autoplaySpeed || 3000,
+                speed: settings.speed || 500,
+                arrows: settings.arrows || true,
+                dots: settings.dots || false,
+                pauseOnHover: settings.pauseOnHover || true,
+                draggable: settings.draggable || true,
+                centerMode: settings.centerMode || false,
+                centerPadding: settings.centerPadding || '50px',
+                adaptiveHeight: true,
+                infinite: true,
+                vertical: false,
+                rtl: typeof is_rtl === 'function' ? is_rtl() : false,
+                responsive: [
+                    {
+                        breakpoint: 991,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 767,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1
+                        }
+                    },
+                    {
+                        breakpoint: 479,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    }
+                ]
             });
             
             // Initialize events after slider is ready
@@ -143,6 +183,10 @@
      * Initialize everything when the DOM is ready
      */
     $(document).ready(function() {
+        // Add console logs
+        console.log('Slick available:', typeof $.fn.slick !== 'undefined');
+        console.log('jQuery version:', $.fn.jquery);
+
         // Check if slick carousel is available
         if (typeof $.fn.slick !== 'undefined') {
             initTimelineSliders();
