@@ -3,14 +3,14 @@
  * The plugin bootstrap file
  *
  * @link              https://example.com
- * @since             1.0.0
+ * @since             1.0.1
  * @package           Emar
  *
  * @wordpress-plugin
  * Plugin Name:       Emar
  * Plugin URI:        https://example.com/emar/
  * Description:       A plugin that adds custom Elementor widgets including a timeline slider widget.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Your Name
  * Author URI:        https://example.com/
  * License:           GPL-2.0+
@@ -30,7 +30,7 @@ if (!defined('WPINC')) {
 /**
  * Current plugin version.
  */
-define('EMAR_VERSION', '1.0.0');
+define('EMAR_VERSION', '1.0.1');
 define('EMAR_PLUGIN_URL', plugin_dir_url(__FILE__));
 define('EMAR_PLUGIN_PATH', plugin_dir_path(__FILE__));
 define('EMAR_PLUGIN_BASENAME', plugin_basename(__FILE__));
@@ -100,8 +100,53 @@ function emar_init() {
     // Run the plugin
     $plugin = new Emar();
     $plugin->run();
+    
+    // Create placeholder image if needed
+    emar_ensure_placeholder_image();
 }
 add_action('plugins_loaded', 'emar_init');
+
+/**
+ * Ensure the placeholder image exists
+ */
+function emar_ensure_placeholder_image() {
+    $placeholder_dir = EMAR_PLUGIN_PATH . 'assets/images';
+    $placeholder_path = $placeholder_dir . '/placeholder.jpg';
+    
+    // If the placeholder image doesn't exist, create it
+    if (!file_exists($placeholder_path)) {
+        // Make sure the directory exists
+        if (!file_exists($placeholder_dir)) {
+            wp_mkdir_p($placeholder_dir);
+        }
+        
+        // Create placeholder creator file and include it
+        $placeholder_creator = EMAR_PLUGIN_PATH . 'assets/placeholder-creator.php';
+        if (!file_exists($placeholder_creator)) {
+            // Save the placeholder creator file
+            $placeholder_content = '<?php
+// Create a blank image
+$image = imagecreatetruecolor(800, 600);
+$bg_color = imagecolorallocate($image, 233, 30, 99);
+$text_color = imagecolorallocate($image, 255, 255, 255);
+imagefill($image, 0, 0, $bg_color);
+imagestring($image, 5, 300, 280, "Timeline Slider", $text_color);
+imagestring($image, 3, 300, 320, "Placeholder Image", $text_color);
+imagejpeg($image, "' . $placeholder_path . '", 90);
+imagedestroy($image);
+?>';
+            file_put_contents($placeholder_creator, $placeholder_content);
+        }
+        
+        // Try to generate the image
+        if (function_exists('imagecreatetruecolor')) {
+            include_once $placeholder_creator;
+        } else {
+            // If GD is not available, create an empty file
+            file_put_contents($placeholder_path, '');
+        }
+    }
+}
 
 /**
  * The code that runs during plugin activation.
@@ -109,6 +154,12 @@ add_action('plugins_loaded', 'emar_init');
 function activate_emar() {
     require_once EMAR_PLUGIN_PATH . 'includes/class-emar-activator.php';
     Emar_Activator::activate();
+    
+    // Ensure placeholder image on activation
+    emar_ensure_placeholder_image();
+    
+    // Flush rewrite rules
+    flush_rewrite_rules();
 }
 register_activation_hook(__FILE__, 'activate_emar');
 
@@ -118,6 +169,9 @@ register_activation_hook(__FILE__, 'activate_emar');
 function deactivate_emar() {
     require_once EMAR_PLUGIN_PATH . 'includes/class-emar-deactivator.php';
     Emar_Deactivator::deactivate();
+    
+    // Flush rewrite rules
+    flush_rewrite_rules();
 }
 register_deactivation_hook(__FILE__, 'deactivate_emar');
 
@@ -170,9 +224,3 @@ function emar_load_textdomain() {
     load_plugin_textdomain('emar', false, dirname(EMAR_PLUGIN_BASENAME) . '/languages/');
 }
 add_action('plugins_loaded', 'emar_load_textdomain', 0);
-
-/**
- * Include activator and deactivator classes
- */
-require_once EMAR_PLUGIN_PATH . 'includes/class-emar-activator.php';
-require_once EMAR_PLUGIN_PATH . 'includes/class-emar-deactivator.php';

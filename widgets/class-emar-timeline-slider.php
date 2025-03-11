@@ -1436,6 +1436,10 @@ class Emar_Timeline_Slider extends \Elementor\Widget_Base {
     private function get_custom_excerpt($post_id, $length = 25) {
         $post = get_post($post_id);
         
+        if (!$post) {
+            return '';
+        }
+        
         if (has_excerpt($post_id)) {
             $excerpt = wp_strip_all_tags(get_the_excerpt($post_id));
         } else {
@@ -1459,12 +1463,28 @@ class Emar_Timeline_Slider extends \Elementor\Widget_Base {
         // Generate a unique ID for this slider instance
         $slider_id = 'emar-timeline-slider-' . $this->get_id();
         
+        // Check if we have access to placeholder image
+        $placeholder_url = EMAR_PLUGIN_URL . 'assets/images/placeholder.jpg';
+        
+        // Ensure the placeholder directory exists - create it if not
+        $placeholder_dir = EMAR_PLUGIN_PATH . 'assets/images';
+        if (!file_exists($placeholder_dir)) {
+            wp_mkdir_p($placeholder_dir);
+        }
+        
+        // Create a placeholder image if it doesn't exist
+        if (!file_exists($placeholder_dir . '/placeholder.jpg')) {
+            // This is a simplistic way - in production, you'd want to properly create a JPG
+            copy(plugin_dir_path(dirname(__FILE__)) . 'assets/images/placeholder.jpg', $placeholder_dir . '/placeholder.jpg');
+        }
+        
         // Prepare query arguments
         $args = [
             'post_type' => $settings['post_type'],
             'posts_per_page' => $settings['posts_per_page'],
             'orderby' => $settings['order_by'],
             'order' => $settings['order'],
+            'post_status' => 'publish', // Ensure we only get published posts
         ];
         
         // Add category filter if set

@@ -54,6 +54,49 @@ class Emar {
         $this->register_widgets();
         $this->define_admin_hooks();
         $this->define_public_hooks();
+        
+        // Create required directories
+        $this->create_required_directories();
+    }
+    
+    /**
+     * Create required directories if they don't exist
+     */
+    private function create_required_directories() {
+        // Create assets/images directory for placeholder images
+        $placeholder_dir = EMAR_PLUGIN_PATH . 'assets/images';
+        if (!file_exists($placeholder_dir)) {
+            wp_mkdir_p($placeholder_dir);
+        }
+        
+        // Create a default placeholder image if it doesn't exist
+        if (!file_exists($placeholder_dir . '/placeholder.jpg')) {
+            // Create a simple placeholder image or copy from another location
+            $this->create_placeholder_image($placeholder_dir . '/placeholder.jpg');
+        }
+    }
+    
+    /**
+     * Create a simple placeholder image
+     * 
+     * @param string $path The path to save the image
+     */
+    private function create_placeholder_image($path) {
+        // Simple method to create a placeholder image
+        // You could use more sophisticated image creation methods if needed
+        $image = imagecreate(800, 600);
+        $bg_color = imagecolorallocate($image, 240, 240, 240);
+        $text_color = imagecolorallocate($image, 180, 180, 180);
+        $font_size = 5;
+        
+        imagestring($image, $font_size, 280, 280, 'Placeholder Image', $text_color);
+        
+        // Try to save the image
+        if (function_exists('imagejpeg')) {
+            imagejpeg($image, $path, 90);
+        }
+        
+        imagedestroy($image);
     }
 
     /**
@@ -154,8 +197,12 @@ class Emar {
         wp_register_script('emar-public', EMAR_PLUGIN_URL . 'assets/js/emar-public.js', ['jquery', 'slick'], $this->version, true);
         wp_localize_script('emar-public', 'emarParams', [
             'ajaxurl' => admin_url('admin-ajax.php'),
-            'nonce' => wp_create_nonce('emar-nonce')
+            'nonce' => wp_create_nonce('emar-nonce'),
+            'pluginUrl' => EMAR_PLUGIN_URL
         ]);
+        
+        // Always enqueue the scripts when the widget is used
+        wp_enqueue_script('emar-public');
     }
 
     /**
