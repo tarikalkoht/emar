@@ -1554,7 +1554,7 @@ class Emar_Timeline_Slider extends \Elementor\Widget_Base {
             }
             
             // Encode slider options for JavaScript
-            $slider_options_json = wp_json_encode($slider_options);
+            $slider_options_json = htmlspecialchars(wp_json_encode($slider_options), ENT_QUOTES, 'UTF-8');
             
             // Slider container
             ?>
@@ -1629,7 +1629,12 @@ class Emar_Timeline_Slider extends \Elementor\Widget_Base {
             <script>
                 jQuery(document).ready(function($) {
                     var $slider = $('#<?php echo esc_attr($slider_id); ?>');
+                    
+                    // Safety check to ensure settings are properly loaded
                     var sliderOptions = $slider.data('settings');
+                    if (!sliderOptions || typeof sliderOptions !== 'object') {
+                        sliderOptions = <?php echo wp_json_encode($slider_options); ?>;
+                    }
                     
                     $slider.on('init', function(event, slick) {
                         updateTimelineProgress(slick);

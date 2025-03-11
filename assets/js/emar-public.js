@@ -5,6 +5,12 @@
  * @package    Emar
  */
 
+// Add jQuery compatibility layer
+if (jQuery.migrateWarnings === undefined) {
+    jQuery.migrateWarnings = [];
+    jQuery.migrateMute = true;
+}
+
 (function($) {
     'use strict';
 
@@ -37,8 +43,8 @@
             var $slider = $(this);
             var settings = $slider.data('settings') || {};
             
-            // Default settings if none are provided
-            if ($.isEmptyObject(settings)) {
+            // Add a check to prevent infinite recursion
+            if ($.isEmptyObject(settings) || typeof settings !== 'object') {
                 settings = {
                     slidesToShow: 3,
                     slidesToScroll: 1,
